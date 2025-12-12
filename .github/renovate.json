@@ -1,0 +1,39 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "schedule:daily",
+    "security:minimumReleaseAgeNpm",
+    ":automergeBranch",
+    ":automergeDigest",
+    ":automergeLinters",
+    ":automergePatch",
+    ":automergeRequireAllStatusChecks",
+    ":automergeTesters",
+    ":automergeTypes",
+    ":maintainLockFilesWeekly",
+    ":npm",
+    ":rebaseStalePrs"
+  ],
+  "automergeSchedule": [
+    "at any time"
+  ],
+  "automergeStrategy": "squash",
+  "constraints": {
+    "php": "~8.2.*"
+  },
+  "packageRules": [
+    {
+      "groupName": "CKEditor Development Tools",
+      "rangeStrategy": "auto",
+      "matchPackageNames": [
+        "/^@ckeditor/ckeditor-dev-/"
+      ]
+    }
+  ],
+  "postUpdateOptions": [
+    "npmDedupe",
+    "npmInstallTwice"
+  ],
+  "skipInstalls": false
+}
