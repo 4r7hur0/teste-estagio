@@ -140,6 +140,7 @@ class Service implements InjectionAwareInterface
         $client->first_name = $data['first_name'] ?? $client->first_name;
         $client->last_name = $data['last_name'] ?? $client->last_name;
         $client->gender = $data['gender'] ?? $client->gender;
+        $client->cpf = $data['cpf'] ?? $client->cpf;
 
         $birthday = $data['birthday'] ?? null;
 

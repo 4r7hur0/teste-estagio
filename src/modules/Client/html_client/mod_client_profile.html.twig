@@ -66,6 +66,13 @@
                                     <input type="email" class="form-control" id="email" name="email" value="{{ profile.email }}" required>
                                 </div>
                             </div>
+                            {# campo para alterar o CPF #}
+                            <div class="row">
+                                <div class="mb-3 col-md-10">
+                                    <label class="form-label" for="cpf">CPF</label>
+                                    <input type="text" class="form-control" id="cpf" name="cpf" value="{{ profile.cpf }}" placeholder="000.000.000-00">
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="mb-3 col-md-5">
                                     <label class="form-label" for="birthday">{{ 'Birthdate'|trans }}</label>

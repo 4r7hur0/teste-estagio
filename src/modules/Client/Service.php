@@ -350,6 +350,7 @@ class Service implements InjectionAwareInterface
             'company_number' => $model->company_number,
             'first_name' => $model->first_name,
             'last_name' => $model->last_name,
+            'cpf' => $model->cpf,
             'gender' => $model->gender,
             'birthday' => $model->birthday,
             'phone_cc' => $model->phone_cc,
@@ -514,6 +515,7 @@ class Service implements InjectionAwareInterface
         $client->notes = $data['notes'] ?? null;
         $client->lang = $data['lang'] ?? null;
         $client->currency = $data['currency'] ?? null;
+        $client->cpf = $data['cpf'] ?? null;
 
         $client->custom_1 = $data['custom_1'] ?? null;
         $client->custom_2 = $data['custom_2'] ?? null;

@@ -51,6 +51,13 @@
                                        value="{{ request.email }}" required="required"/>
                             </div>
 
+                            {# adicionado o campo para preencher o cpf #}
+                            <div class="mb-3">
+                                <label class="form-label" for="cpf">CPF</label>
+                                <input class="form-control" id="cpf" type="text" name="cpf" 
+                                       value="{{ request.cpf }}" required="required" placeholder="000.000.000-00"/>
+                            </div>
+
                             {% if 'company' in r %}
                                 <div class="mb-3">
                                     <label class="form-label" for="company">{{ 'Company'|trans }}</label>
