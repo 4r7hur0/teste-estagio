@@ -208,6 +208,7 @@
                                 </th>
                                 <th>{{ 'Name'|trans }}</th>
                                 <th>{{ 'Company'|trans }}</th>
+                                <th>CPF</th>
                                 <th>{{ 'Status'|trans }}</th>
                                 <th>{{ 'Date'|trans }}</th>
                                 <th class="w-1"></th>
@@ -240,6 +241,7 @@
                                 <td>
                                     <a href="{{ 'client/manage'|alink }}/{{ client.id }}" title="{{ client.company }}">{{ client.company|default('-')|truncate(30) }}</a>
                                 </td>
+                                <td>{{ client.cpf }}</td>
                                 <td>
                                     {% if client.status == 'active' %}
                                         <span class="badge bg-success me-1"></span>
