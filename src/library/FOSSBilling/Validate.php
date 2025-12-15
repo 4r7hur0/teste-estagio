@@ -197,4 +197,32 @@ class Validate
 
         return true;
     }
+
+    public function isCpfValid($cpf) : bool {
+        // Remove tudo que não for um número
+        $cpf = preg_replace( '/[^0-9]/is', '', (string) $cpf );
+
+        // Verifica se o cpf tem 11 dígitos
+        if (strlen($cpf) != 11) {
+            return false;
+        }
+
+        // Verifica se todos os dígitos são iguais
+        if (preg_match('/^(\\d)\\1{10}$/', $cpf)){
+            return false;
+        }
+
+        // Calculo para validar os dígitos verificadores
+        for ($t = 9; $t < 11; $t++) {
+            for ($d = 0, $c = 0; $c < $t; $c++) {
+                $d += $cpf[$c] * (($t + 1) - $c);
+            }
+            $d = ((10 * $d) % 11) % 10;
+            if ($cpf[$c] != $d) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

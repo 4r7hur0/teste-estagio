@@ -140,7 +140,15 @@ class Service implements InjectionAwareInterface
         $client->first_name = $data['first_name'] ?? $client->first_name;
         $client->last_name = $data['last_name'] ?? $client->last_name;
         $client->gender = $data['gender'] ?? $client->gender;
+
         $client->cpf = $data['cpf'] ?? $client->cpf;
+
+        // validação
+        if (!empty($client->cpf)) {
+            if (!$this->di['validator']->isCpfValid($client->cpf)) {
+                throw new \FOSSBilling\InformationException('O CPF informado é inválido.');
+            }
+        }
 
         $birthday = $data['birthday'] ?? null;
 
