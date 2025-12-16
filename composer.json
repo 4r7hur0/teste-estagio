@@ -54,6 +54,7 @@
         "liborm85/composer-vendor-cleaner": "^1.7",
         "mattketmo/email-checker": "^2.2",
         "maxmind-db/reader": "^1.11",
+        "mercadopago/dx-php": "^3.8",
         "monolog/monolog": "^3.5",
         "nelexa/zip": "^4.0.2",
         "php-debugbar/php-debugbar": "^2.1.6",
